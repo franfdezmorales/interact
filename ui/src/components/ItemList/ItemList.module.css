@@ -1,0 +1,16 @@
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.25em; 
+    cursor: pointer;
+    width: fit-content;
+}
+
+.label {
+    font-weight: bold;
+    color: #DFDFDF;
+}
+
+.item:hover > .label {
+    color: #0F9;
+}

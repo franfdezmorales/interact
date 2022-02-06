@@ -15,7 +15,8 @@ AddEventHandler('interact:saveTarget', function(entityModel)
         distance = 5.0, 
         enable = function(entity)
             return true
-        end 
+        end
+    })
 
 #### - ♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️♾️ - ####]]
 

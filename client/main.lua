@@ -266,7 +266,7 @@ end
 function interact()
     while targetFound do 
         Citizen.Wait(0)
-        if IsDisabledControlJustReleased(0, 24) then
+        if IsControlJustReleased(0,24) or IsDisabledControlJustReleased(0, 24) then
             SetNuiFocus(true, true)
             SetCursorLocation(0.5, 0.5)
             interacting = true
@@ -329,5 +329,14 @@ end
 AddEventHandler('interact:saveTarget', function(entity)
     local entityModel = GetEntityModel(entity)
     TriggerServerEvent('interact:saveTarget', entityModel)
+end)
+
+AddEventHandler('interact:openTrunk', function(entity)
+    SetVehicleDoorOpen(entity, 5, false, false)
+end)
+
+AddEventHandler('interact:changeColor', function(entity)
+    local index = math.random(0, 16)
+    SetVehicleColourCombination(entity, index)
 end)
 

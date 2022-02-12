@@ -52,15 +52,15 @@ function updateInfo(data)
 end
 
 function startInteract()
-    showUI() 
-    interactEnabled = true
-    local currentList = {}
+    if not interacting then 
+        showUI() 
+        interactEnabled = true
+        local currentList = {}
 
-    Citizen.CreateThread(disableControls) 
+        Citizen.CreateThread(disableControls) 
 
-    while interactEnabled do 
-        Citizen.Wait(5)
-        if not interacting then 
+        while interactEnabled do 
+            Citizen.Wait(5)
             local result, data = pcall(getData)
             targetFound = false 
             local newList = {}
